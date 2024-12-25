@@ -1,0 +1,19 @@
+name: heart-attack-prediction
+
+conda_env: environment.yaml
+
+entry_points:
+  preprocess:
+    command: python src/preprocess.py --input_path data/heart.csv --output_dir data/processed
+
+  train:
+    parameters:
+      n_estimators: {type: int, default: 100}
+      max_depth: {type: int, default: 10}
+    command: >
+      python src/train.py
+      --n_estimators {n_estimators}
+      --max_depth {max_depth}
+
+  evaluate:
+    command: python src/evaluate.py

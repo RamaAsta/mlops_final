@@ -1,0 +1,15 @@
+{
+  "dashboard": {
+    "title": "Heart Attack Prediction Monitoring",
+    "panels": [
+      {
+        "type": "graph",
+        "title": "Model Accuracy",
+        "data_source": "Prometheus",
+        "targets": [
+          {"expr": "model_accuracy"}
+        ]
+      }
+    ]
+  }
+}
